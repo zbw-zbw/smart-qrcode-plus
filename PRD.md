@@ -1,10 +1,10 @@
 # 需求文档
 
-## SmartQR Plus - 浏览器扩展插件
+## Smart QR Code Plus - 浏览器扩展插件
 
 ### 一、产品概述
 
-**产品名称**：SmartQR Plus
+**产品名称**：Smart QR Code Plus
 
 **产品类型**：Chrome 浏览器扩展插件
 
@@ -65,7 +65,7 @@
 
 ```
 +------------------------------------------------+
-| SmartQR Plus                                   |
+| Smart QR Code Plus                                   |
 +------------------------------------------------+
 | 当前链接：                                     |
 | [ https://example.com?foo=1&bar=2 ] [编辑]     |

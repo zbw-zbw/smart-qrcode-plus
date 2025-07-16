@@ -99,7 +99,7 @@ function App() {
   return (
     <div className="w-96 bg-white">
       <div className="p-4 border-b border-gray-200">
-        <h1 className="text-lg font-semibold text-gray-800 mb-4">SmartQR Plus</h1>
+        <h1 className="text-lg font-semibold text-gray-800 mb-4">Smart QR Code Plus</h1>
         <QRCodeDisplay url={currentUrl} />
       </div>
 

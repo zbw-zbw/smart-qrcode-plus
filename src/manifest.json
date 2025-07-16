@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "SmartQR Plus",
+  "name": "Smart QR Code Plus",
   "version": "1.1.0",
   "description": "智能二维码生成与 URL 参数编辑工具",
   "permissions": [
@@ -10,6 +10,6 @@
   ],
   "action": {
     "default_popup": "src/popup/index.html",
-    "default_title": "SmartQR Plus"
+    "default_title": "Smart QR Code Plus"
   }
 } 

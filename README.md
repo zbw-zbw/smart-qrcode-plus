@@ -1,4 +1,4 @@
-# SmartQR Plus - 智能二维码生成浏览器扩展
+# Smart QR Code Plus - 智能二维码生成浏览器扩展
 
 ![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
