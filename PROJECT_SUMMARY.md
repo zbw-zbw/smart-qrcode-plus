@@ -1,4 +1,4 @@
-# SmartQR Plus 项目完成总结
+# Smart QR Code Plus 项目完成总结
 
 ## 🎉 项目状态: 已完成并发布
 
@@ -120,4 +120,4 @@ npm run dev
 4. **文档完善** - 详细的安装指南和故障排除
 5. **开源就绪** - 完整的Git历史，标准的开源项目结构
 
-SmartQR Plus 现已完成开发并成功发布到GitHub，可以立即使用！ 🎉 
+Smart QR Code Plus 现已完成开发并成功发布到GitHub，可以立即使用！ 🎉 
