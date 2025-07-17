@@ -20,8 +20,12 @@ const URLParamsEditor = ({ params, onChange }: URLParamsEditorProps) => {
   // 处理键盘事件
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
+      e.preventDefault()
+      e.stopPropagation()
       setEditingIndex(null) // 回车保存并退出编辑
     } else if (e.key === 'Escape') {
+      e.preventDefault()
+      e.stopPropagation() // 阻止ESC键事件冒泡，避免关闭插件
       setEditingIndex(null) // ESC 退出编辑
     }
   }
@@ -42,6 +46,8 @@ const URLParamsEditor = ({ params, onChange }: URLParamsEditorProps) => {
   // 处理添加参数的键盘事件
   const handleAddKeyDown = (e: React.KeyboardEvent, field: 'key' | 'value') => {
     if (e.key === 'Enter') {
+      e.preventDefault()
+      e.stopPropagation()
       if (field === 'key' && newParam.key.trim()) {
         // 如果在键输入框按回车，聚焦到值输入框
         const valueInput = e.currentTarget.parentElement?.parentElement?.querySelector('input[placeholder="参数值"]') as HTMLInputElement
@@ -51,6 +57,8 @@ const URLParamsEditor = ({ params, onChange }: URLParamsEditorProps) => {
         handleAddParam()
       }
     } else if (e.key === 'Escape') {
+      e.preventDefault()
+      e.stopPropagation() // 阻止ESC键事件冒泡，避免关闭插件
       handleCancelAdd()
     }
   }
@@ -219,3 +227,4 @@ const URLParamsEditor = ({ params, onChange }: URLParamsEditorProps) => {
 }
 
 export default URLParamsEditor 
+ 

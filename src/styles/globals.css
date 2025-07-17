@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* 隐藏滚动条，只在hover时显示 */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 0px;
+}
+
+/* 容器hover时显示滚动条 */
+.scrollable:hover::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+.scrollable:hover::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.scrollable:hover::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+.scrollable:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Firefox - 完全隐藏滚动条 */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* 美化输入框样式 */
+.input-base {
+  @apply w-full p-3 text-sm border rounded-md transition-colors duration-200;
+}
+
+.input-valid {
+  @apply input-base border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none;
+}
+
+.input-invalid {
+  @apply input-base border-red-300 focus:border-red-500 focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 focus:outline-none;
+}
+
+.input-focus {
+  @apply ring-2 ring-blue-400 ring-opacity-50 border-blue-400;
+}
+
+/* 统一按钮样式 */
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-md transition-colors duration-200 disabled:bg-gray-400 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium px-4 py-2 rounded-md transition-colors duration-200;
+}
+
+.btn-success {
+  @apply bg-green-100 hover:bg-green-200 text-green-700 font-medium px-4 py-2 rounded-md transition-colors duration-200;
+}
+
+/* 小按钮样式 */
+.btn-sm {
+  @apply px-3 py-2 text-xs rounded;
+}
+
+.btn-copy {
+  @apply btn-sm bg-blue-600 hover:bg-blue-700 text-white transition-colors;
+}
+
+.btn-copy-qr {
+  @apply btn-sm bg-green-600 hover:bg-green-700 text-white transition-colors;
+}
+
+.btn-download {
+  @apply btn-sm bg-purple-600 hover:bg-purple-700 text-white transition-colors;
+}
+
+.btn-reset {
+  @apply btn-sm bg-gray-600 hover:bg-gray-700 text-white disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors;
+}
+
+.btn-icon {
+  @apply flex items-center justify-center space-x-1;
+}
+
+/* 解码结果按钮样式 */
+.btn-decode-copy {
+  @apply btn-icon px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md text-sm font-medium transition-colors;
+}
+
+.btn-decode-open {
+  @apply btn-icon px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-md text-sm font-medium transition-colors;
+}
+
+.btn-decode-edit {
+  @apply btn-icon w-full px-4 py-2 bg-green-100 hover:bg-green-200 text-green-700 rounded-md text-sm font-medium transition-colors;
+}
+
+.btn-decode-back {
+  @apply btn-icon w-full px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md text-sm font-medium transition-colors;
+}
+
+/* 统一卡片样式 */
+.card {
+  @apply bg-white border border-gray-200 rounded-lg shadow-sm;
+}
+
+.card-header {
+  @apply p-4 border-b border-gray-200 bg-gray-50 rounded-t-lg;
+}
+
+.card-body {
+  @apply p-4;
+}
+
+/* 改进的加载动画 */
+.loading-spinner {
+  @apply animate-spin rounded-full border-2 border-gray-300 border-t-blue-600;
+}
+
+/* 美化模式切换标签 */
+.mode-tab {
+  @apply flex-1 py-2 px-4 rounded-md text-sm font-medium transition-all duration-200 cursor-pointer;
+}
+
+.mode-tab.active {
+  @apply bg-white text-blue-600 shadow-sm;
+}
+
+.mode-tab.inactive {
+  @apply text-gray-600 hover:text-gray-800 hover:bg-gray-50;
+} 

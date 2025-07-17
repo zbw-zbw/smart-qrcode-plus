@@ -43,10 +43,8 @@ const URLInput = ({ url, onChange }: URLInputProps) => {
         ref={inputRef}
         value={url}
         onChange={handleChange}
-        className={`w-full p-3 text-sm border rounded-md resize-none transition-colors ${
-          !url || isValidUrl(url) 
-            ? 'border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500' 
-            : 'border-red-300 focus:border-red-500 focus:ring-1 focus:ring-red-500'
+        className={`resize-none ${
+          !url || isValidUrl(url) ? 'input-valid' : 'input-invalid'
         }`}
         rows={3}
         placeholder="请输入完整的 URL..."
@@ -65,3 +63,4 @@ const URLInput = ({ url, onChange }: URLInputProps) => {
 }
 
 export default URLInput 
+ 
