@@ -1,93 +1,81 @@
-import { useState } from 'react';
-import { URLParam } from '../App';
+import { useState } from 'react'
+import { URLParam } from '../App'
 
 interface URLParamsEditorProps {
-  params: URLParam[];
-  onChange: (params: URLParam[]) => void;
+  params: URLParam[]
+  onChange: (params: URLParam[]) => void
 }
 
 const URLParamsEditor = ({ params, onChange }: URLParamsEditorProps) => {
-  const [editingIndex, setEditingIndex] = useState<number | null>(null);
-  const [newParam, setNewParam] = useState({ key: '', value: '' });
-  const [showAddForm, setShowAddForm] = useState(false);
+  const [editingIndex, setEditingIndex] = useState<number | null>(null)
+  const [newParam, setNewParam] = useState({ key: '', value: '' })
+  const [showAddForm, setShowAddForm] = useState(false)
 
-  const handleEditParam = (
-    index: number,
-    field: 'key' | 'value',
-    value: string
-  ) => {
-    const newParams = [...params];
-    newParams[index] = { ...newParams[index], [field]: value };
-    onChange(newParams);
-  };
+  const handleEditParam = (index: number, field: 'key' | 'value', value: string) => {
+    const newParams = [...params]
+    newParams[index] = { ...newParams[index], [field]: value }
+    onChange(newParams)
+  }
 
   // 处理键盘事件
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
-      e.preventDefault();
-      e.stopPropagation();
-      setEditingIndex(null); // 回车保存并退出编辑
+      e.preventDefault()
+      e.stopPropagation()
+      setEditingIndex(null) // 回车保存并退出编辑
     } else if (e.key === 'Escape') {
-      e.preventDefault();
-      e.stopPropagation(); // 阻止ESC键事件冒泡，避免关闭插件
-      setEditingIndex(null); // ESC 退出编辑
+      e.preventDefault()
+      e.stopPropagation() // 阻止ESC键事件冒泡，避免关闭插件
+      setEditingIndex(null) // ESC 退出编辑
     }
-  };
+  }
 
   const handleDeleteParam = (index: number) => {
-    const newParams = params.filter((_, i) => i !== index);
-    onChange(newParams);
-  };
+    const newParams = params.filter((_, i) => i !== index)
+    onChange(newParams)
+  }
 
   const handleAddParam = () => {
     if (newParam.key.trim() && newParam.value.trim()) {
-      onChange([
-        ...params,
-        { key: newParam.key.trim(), value: newParam.value.trim() },
-      ]);
-      setNewParam({ key: '', value: '' });
-      setShowAddForm(false);
+      onChange([...params, { key: newParam.key.trim(), value: newParam.value.trim() }])
+      setNewParam({ key: '', value: '' })
+      setShowAddForm(false)
     }
-  };
+  }
 
   // 处理添加参数的键盘事件
   const handleAddKeyDown = (e: React.KeyboardEvent, field: 'key' | 'value') => {
     if (e.key === 'Enter') {
-      e.preventDefault();
-      e.stopPropagation();
+      e.preventDefault()
+      e.stopPropagation()
       if (field === 'key' && newParam.key.trim()) {
         // 如果在键输入框按回车，聚焦到值输入框
-        const valueInput =
-          e.currentTarget.parentElement?.parentElement?.querySelector(
-            'input[placeholder="参数值"]'
-          ) as HTMLInputElement;
-        valueInput?.focus();
-      } else if (
-        field === 'value' &&
-        newParam.key.trim() &&
-        newParam.value.trim()
-      ) {
+        const valueInput = e.currentTarget.parentElement?.parentElement?.querySelector('input[placeholder="参数值"]') as HTMLInputElement
+        valueInput?.focus()
+      } else if (field === 'value' && newParam.key.trim() && newParam.value.trim()) {
         // 如果在值输入框按回车且都有内容，添加参数
-        handleAddParam();
+        handleAddParam()
       }
     } else if (e.key === 'Escape') {
-      e.preventDefault();
-      e.stopPropagation(); // 阻止ESC键事件冒泡，避免关闭插件
-      handleCancelAdd();
+      e.preventDefault()
+      e.stopPropagation() // 阻止ESC键事件冒泡，避免关闭插件
+      handleCancelAdd()
     }
-  };
+  }
 
   const handleCancelAdd = () => {
-    setNewParam({ key: '', value: '' });
-    setShowAddForm(false);
-  };
+    setNewParam({ key: '', value: '' })
+    setShowAddForm(false)
+  }
 
   return (
     <div className="space-y-3">
       <h3 className="text-sm font-medium text-gray-700">URL 参数列表：</h3>
-
+      
       {params.length === 0 && !showAddForm && (
-        <div className="text-sm text-gray-500 text-center py-4">暂无参数</div>
+        <div className="text-sm text-gray-500 text-center py-4">
+          暂无参数
+        </div>
       )}
 
       <div className="space-y-2">
@@ -101,9 +89,7 @@ const URLParamsEditor = ({ params, onChange }: URLParamsEditorProps) => {
                     <input
                       type="text"
                       value={param.key}
-                      onChange={(e) =>
-                        handleEditParam(index, 'key', e.target.value)
-                      }
+                      onChange={(e) => handleEditParam(index, 'key', e.target.value)}
                       onKeyDown={handleKeyDown}
                       className="flex-1 px-2 py-1 text-xs border border-gray-300 rounded focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                       placeholder="参数名"
@@ -115,9 +101,7 @@ const URLParamsEditor = ({ params, onChange }: URLParamsEditorProps) => {
                     <input
                       type="text"
                       value={param.value}
-                      onChange={(e) =>
-                        handleEditParam(index, 'value', e.target.value)
-                      }
+                      onChange={(e) => handleEditParam(index, 'value', e.target.value)}
                       onKeyDown={handleKeyDown}
                       className="flex-1 px-2 py-1 text-xs border border-gray-300 rounded focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                       placeholder="参数值"
@@ -143,16 +127,14 @@ const URLParamsEditor = ({ params, onChange }: URLParamsEditorProps) => {
                   {/* 显示解码后的值，如果不同的话 */}
                   {(() => {
                     try {
-                      const decoded = decodeURIComponent(param.value);
-                      return (
-                        decoded !== param.value && (
-                          <div className="mt-1 text-xs text-blue-600">
-                            解码: {decoded}
-                          </div>
-                        )
-                      );
+                      const decoded = decodeURIComponent(param.value)
+                      return decoded !== param.value && (
+                        <div className="mt-1 text-xs text-blue-600">
+                          解码: {decoded}
+                        </div>
+                      )
                     } catch {
-                      return null;
+                      return null
                     }
                   })()}
                 </div>
@@ -162,44 +144,25 @@ const URLParamsEditor = ({ params, onChange }: URLParamsEditorProps) => {
                     className="p-1 text-xs text-blue-600 hover:text-blue-800 hover:bg-blue-100 rounded"
                     title="编辑"
                   >
-                    <svg
-                      className="w-3 h-3"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                      />
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                     </svg>
                   </button>
-
+                  
                   <button
                     onClick={() => handleDeleteParam(index)}
                     className="p-1 text-xs text-red-600 hover:text-red-800 hover:bg-red-100 rounded"
                     title="删除"
                   >
-                    <svg
-                      className="w-3 h-3"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                      />
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                     </svg>
                   </button>
                 </div>
               </div>
             )}
           </div>
+
         ))}
       </div>
 
@@ -211,9 +174,7 @@ const URLParamsEditor = ({ params, onChange }: URLParamsEditorProps) => {
               <input
                 type="text"
                 value={newParam.key}
-                onChange={(e) =>
-                  setNewParam({ ...newParam, key: e.target.value })
-                }
+                onChange={(e) => setNewParam({ ...newParam, key: e.target.value })}
                 onKeyDown={(e) => handleAddKeyDown(e, 'key')}
                 placeholder="参数名"
                 className="flex-1 px-2 py-1 text-xs border border-gray-300 rounded focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
@@ -225,9 +186,7 @@ const URLParamsEditor = ({ params, onChange }: URLParamsEditorProps) => {
               <input
                 type="text"
                 value={newParam.value}
-                onChange={(e) =>
-                  setNewParam({ ...newParam, value: e.target.value })
-                }
+                onChange={(e) => setNewParam({ ...newParam, value: e.target.value })}
                 onKeyDown={(e) => handleAddKeyDown(e, 'value')}
                 placeholder="参数值"
                 className="flex-1 px-2 py-1 text-xs border border-gray-300 rounded focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
@@ -264,7 +223,8 @@ const URLParamsEditor = ({ params, onChange }: URLParamsEditorProps) => {
         </button>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default URLParamsEditor;
+export default URLParamsEditor 
+ 
