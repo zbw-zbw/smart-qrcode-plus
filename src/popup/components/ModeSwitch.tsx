@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-export type Mode = 'generate' | 'decode'
+export type Mode = 'generate' | 'decode';
 
 interface ModeSwitchProps {
-  mode: Mode
-  onChange: (mode: Mode) => void
+  mode: Mode;
+  onChange: (mode: Mode) => void;
 }
 
 const ModeSwitch: React.FC<ModeSwitchProps> = ({ mode, onChange }) => {
@@ -23,7 +23,7 @@ const ModeSwitch: React.FC<ModeSwitchProps> = ({ mode, onChange }) => {
         🔍 解码模式
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default ModeSwitch 
+export default ModeSwitch;
