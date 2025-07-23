@@ -5,7 +5,6 @@
   "description": "智能二维码生成与解码及 URL 参数编辑工具",
   "permissions": [
     "activeTab",
-    "scripting",
     "clipboardRead"
   ],
   "icons": {

@@ -172,7 +172,6 @@ smart-qrcode-plus/
 此扩展仅请求最小必要权限：
 
 - `activeTab`: 读取当前激活标签页的 URL
-- `scripting`: 基础脚本执行权限
 - `clipboardRead`: 处理剪贴板图片
 
 **隐私承诺**：
