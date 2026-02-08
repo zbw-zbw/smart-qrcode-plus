@@ -38,7 +38,7 @@ const QRCodeDecoder: React.FC<QRCodeDecoderProps> = ({ onDecodeSuccess }) => {
       onDecodeSuccess({ content, type })
       setError('')
     } else {
-      setError('未识别到二维码，请确保图片清晰且包含有效二维码')
+      setError('未识别到二维码，请确保图片清晰且包含有效二维码\nNo QR code detected, please ensure the image is clear and contains a valid QR code')
     }
   }, [onDecodeSuccess])
 
@@ -55,7 +55,7 @@ const QRCodeDecoder: React.FC<QRCodeDecoderProps> = ({ onDecodeSuccess }) => {
   // 处理文件上传
   const handleFileUpload = useCallback((file: File) => {
     if (!file.type.startsWith('image/')) {
-      setError('请选择有效的图片文件')
+      setError('请选择有效的图片文件\nPlease select a valid image file')
       return
     }
 
@@ -70,7 +70,7 @@ const QRCodeDecoder: React.FC<QRCodeDecoderProps> = ({ onDecodeSuccess }) => {
         setIsLoading(false)
       }
       img.onerror = () => {
-        setError('图片加载失败')
+        setError('图片加载失败\nImage loading failed')
         setIsLoading(false)
       }
       img.src = e.target?.result as string
@@ -128,10 +128,10 @@ const QRCodeDecoder: React.FC<QRCodeDecoderProps> = ({ onDecodeSuccess }) => {
       if (extension && supportedFormats.includes(extension)) {
         return { valid: true, type: 'url' }
       } else {
-        return { valid: false, message: '请确保URL指向图片文件（支持png、jpg、gif、webp、svg等格式）' }
+        return { valid: false, message: '请确保URL指向图片文件（支持png、jpg、gif、webp、svg等格式）\nPlease ensure URL points to an image file (supports png, jpg, gif, webp, svg formats)' }
       }
     } catch {
-      return { valid: false, message: '请输入有效的URL地址或Base64数据' }
+      return { valid: false, message: '请输入有效的URL地址或Base64数据\nPlease enter a valid URL or Base64 data' }
     }
   }
 
@@ -156,7 +156,7 @@ const QRCodeDecoder: React.FC<QRCodeDecoderProps> = ({ onDecodeSuccess }) => {
   // 处理网络图片URL解码
   const handleUrlDecode = () => {
     if (!imageUrl.trim()) {
-      setError('请输入图片URL或Base64数据')
+      setError('请输入图片URL或Base64数据\nPlease enter image URL or Base64 data')
       return
     }
 
@@ -179,11 +179,11 @@ const QRCodeDecoder: React.FC<QRCodeDecoderProps> = ({ onDecodeSuccess }) => {
             setIsLoading(false)
           })
           .catch(() => {
-            setError('SVG格式二维码处理失败')
+            setError('SVG格式二维码处理失败\nSVG QR code processing failed')
             setIsLoading(false)
           })
       } catch (error) {
-        setError('SVG数据格式错误')
+        setError('SVG数据格式错误\nSVG data format error')
         setIsLoading(false)
       }
     } 
@@ -195,7 +195,7 @@ const QRCodeDecoder: React.FC<QRCodeDecoderProps> = ({ onDecodeSuccess }) => {
         setIsLoading(false)
       }
       img.onerror = () => {
-        setError('Base64图片数据格式错误或不是有效的图片')
+        setError('Base64图片数据格式错误或不是有效的图片\nBase64 image data format error or not a valid image')
         setIsLoading(false)
       }
       img.src = imageUrl
@@ -208,7 +208,7 @@ const QRCodeDecoder: React.FC<QRCodeDecoderProps> = ({ onDecodeSuccess }) => {
         setIsLoading(false)
       }
       img.onerror = () => {
-        setError('图片加载失败：可能是URL错误、图片不存在、或不支持跨域访问')
+        setError('图片加载失败：可能是URL错误、图片不存在、或不支持跨域访问\nImage loading failed: URL error, image not found, or CORS not supported')
         setIsLoading(false)
       }
       img.src = imageUrl
@@ -226,7 +226,7 @@ const QRCodeDecoder: React.FC<QRCodeDecoderProps> = ({ onDecodeSuccess }) => {
   return (
     <div className="space-y-4">
       <div className="text-sm text-gray-600 mb-4">
-        选择一种方式来解码二维码：
+        选择一种方式来解码二维码：<br/>Choose a method to decode QR code:
       </div>
 
       {/* 文件上传 */}
@@ -245,10 +245,10 @@ const QRCodeDecoder: React.FC<QRCodeDecoderProps> = ({ onDecodeSuccess }) => {
             disabled={isLoading}
             className="text-blue-600 hover:text-blue-700 font-medium disabled:text-gray-400"
           >
-            点击上传图片
+            点击上传图片<br/>Click to Upload
           </button>
           <div className="text-xs text-gray-500">
-            支持 PNG、JPG、JPEG、GIF、WebP、SVG 格式
+            支持 PNG、JPG、JPEG、GIF、WebP、SVG 格式<br/>Support PNG, JPG, JPEG, GIF, WebP, SVG
           </div>
         </div>
       </div>
@@ -258,9 +258,9 @@ const QRCodeDecoder: React.FC<QRCodeDecoderProps> = ({ onDecodeSuccess }) => {
         <div className="flex items-center space-x-2">
           <div className="text-lg">📋</div>
           <div className="text-sm text-gray-600">
-            <strong>快捷粘贴：</strong>
+            <strong>快捷粘贴<br/>Quick Paste:</strong>
             <br />
-            截图后直接按 Ctrl+V 粘贴图片进行解码
+            截图后直接按 Ctrl+V 粘贴图片进行解码<br/>Press Ctrl+V to paste screenshot for decoding
           </div>
         </div>
       </div>
@@ -268,10 +268,10 @@ const QRCodeDecoder: React.FC<QRCodeDecoderProps> = ({ onDecodeSuccess }) => {
       {/* 网络图片URL */}
       <div className="space-y-2">
         <label className="block text-sm font-medium text-gray-700">
-          🌐 输入图片地址：
+          🌐 输入图片地址<br/>Enter Image URL:
         </label>
         <div className="text-xs text-gray-500 mb-2">
-          支持格式：图片直链URL、Base64数据（图片需包含二维码）
+          支持格式：图片直链URL、Base64数据（图片需包含二维码）<br/>Support: Image URL, Base64 data (image must contain QR code)
         </div>
         <div className="flex space-x-2">
           <input
@@ -287,24 +287,28 @@ const QRCodeDecoder: React.FC<QRCodeDecoderProps> = ({ onDecodeSuccess }) => {
             disabled={isLoading || !imageUrl}
             className="btn-primary btn-sm"
           >
-            解码
+            解码 Decode
           </button>
         </div>
-        
+
         {/* 使用说明 */}
-        <div className="text-xs text-gray-400 space-y-1">
+        {/* <div className="text-xs text-gray-400 space-y-1">
           <div>• 图片URL：如 https://cdn.example.com/qrcode.png</div>
+          <div>  Image URL: e.g. https://cdn.example.com/qrcode.png</div>
           <div>• Base64位图：如 data:image/png;base64,iVBORw0...</div>
+          <div>  Base64 bitmap: e.g. data:image/png;base64,iVBORw0...</div>
           <div>• SVG二维码：如 data:image/svg+xml;utf8,%3Csvg...</div>
+          <div>  SVG QR code: e.g. data:image/svg+xml;utf8,%3Csvg...</div>
           <div>• 图片必须包含可识别的二维码内容</div>
-        </div>
+          <div>  Image must contain recognizable QR code content</div>
+        </div> */}
       </div>
 
       {/* 加载状态 */}
       {isLoading && (
         <div className="flex items-center justify-center py-4">
           <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
-          <span className="ml-2 text-sm text-gray-600">解码中...</span>
+          <span className="ml-2 text-sm text-gray-600">解码中 Decoding...</span>
         </div>
       )}
 

@@ -1,0 +1,97 @@
+========================================
+Chrome Web Store 详细说明（直接复制粘贴）
+========================================
+
+🚀 The fastest way to create and scan QR codes with advanced URL editing
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✨ KEY FEATURES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📱 QR CODE GENERATOR
+• Instantly convert any URL to QR code
+• Generate QR codes from current page with one click
+• High-quality QR code output (240x240px)
+• Copy QR code image to clipboard
+• Download QR code as PNG file
+
+🔍 QR CODE SCANNER & DECODER
+• Scan QR codes from images (PNG, JPG, WebP, SVG)
+• Decode QR codes from screenshots
+• Support drag & drop or file upload
+• Instant decoding results
+
+🎯 VISUAL URL PARAMETER EDITOR (Unique Feature!)
+• Edit URL parameters visually without typing
+• Add, modify, or delete URL parameters easily
+• Automatic URL encoding/decoding
+• Real-time QR code preview
+• Perfect for developers and marketers
+
+💾 SMART CACHE SYSTEM
+• Auto-save your work to prevent data loss
+• Smart detection: use current page or restore previous edit
+• Seamless workflow across different pages
+
+🔒 PRIVACY & PERFORMANCE
+• 100% offline - no data sent to servers
+• No ads, no tracking, no registration required
+• Fast and lightweight
+• Works without internet connection
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👥 PERFECT FOR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Developers testing URLs with different parameters
+✓ Marketers creating campaign links
+✓ Anyone who needs quick QR code generation
+✓ Users who frequently share URLs via QR codes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📖 HOW TO USE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Click the extension icon
+2. Generate Mode: Current page URL automatically loaded, edit if needed
+3. Scan Mode: Upload or drag QR code image to decode
+4. Copy or download your QR code
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❓ FREQUENTLY ASKED QUESTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Q: Is this QR code generator free?
+A: Yes, completely free with no ads and no registration required.
+
+Q: What image formats are supported?
+A: PNG, JPG, WebP, SVG, and all common image formats.
+
+Q: Does it require internet connection?
+A: No, it works 100% offline to protect your privacy.
+
+Q: Can I edit URL parameters?
+A: Yes! This is our unique feature - visually edit URL parameters without manual typing.
+
+Q: Is my data safe?
+A: Absolutely! All processing happens locally in your browser. No data is sent to any server.
+
+Q: Can I use it for commercial purposes?
+A: Yes, free for both personal and commercial use.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🏷️ KEYWORDS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+qr code generator, qr code scanner, qr code reader, qr code maker, qr code creator, url to qr code, link to qr code, qr code decoder, scan qr code, create qr code, url parameter editor, link editor, offline qr code, free qr code, no ads qr code
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💬 SUPPORT & FEEDBACK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+If you find this extension helpful, please leave a review and share your use case!
+For bug reports or feature requests, please contact us through the support tab.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🌟 Thank you for using QR Code Generator & Scanner!

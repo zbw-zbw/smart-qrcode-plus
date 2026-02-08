@@ -1,11 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "Smart QRCode Plus",
-  "version": "1.0.1",
-  "description": "智能二维码生成与解码及 URL 参数编辑工具",
+  "name": "QR Code Generator & Scanner - URL Editor",
+  "version": "1.0.2",
+  "description": "Generate & decode QR codes (PNG/JPG/WebP/SVG). Visual URL parameter editor. 100% offline, no ads.",
   "permissions": [
     "activeTab",
-    "clipboardRead"
+    "clipboardRead",
+    "storage"
   ],
   "icons": {
     "16": "icons/icon-16.png",
@@ -15,7 +16,7 @@
   },
   "action": {
     "default_popup": "src/popup/index.html",
-    "default_title": "Smart QRCode Plus",
+    "default_title": "QR Code Generator & Scanner - URL Editor",
     "default_icon": {
       "16": "icons/icon-16.png",
       "32": "icons/icon-32.png",

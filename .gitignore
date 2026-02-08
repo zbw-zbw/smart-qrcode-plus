@@ -60,3 +60,5 @@ coverage/
 # Chrome extension files (if any)
 *.crx
 *.pem 
+
+*.zip
