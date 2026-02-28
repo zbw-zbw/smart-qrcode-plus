@@ -5,7 +5,8 @@
 ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-red.svg)
 
 【二维码生成】Chrome 浏览器插件，根据链接智能生成二维码，支持参数编辑、编辑内容自动缓存、图片解码等特色功能
-![立即安装](https://chromewebstore.google.com/detail/qr-code-generator-scanner/jklnokpkcmlbchlhegebjbhdhdamnmpg)
+
+[插件链接](https://chromewebstore.google.com/detail/qr-code-generator-scanner/jklnokpkcmlbchlhegebjbhdhdamnmpg)
 
 ## ✨ 功能特性
 
