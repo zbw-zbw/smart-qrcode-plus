@@ -1,4 +1,4 @@
-# qr-code-generator - 智能二维码处理浏览器扩展
+# qr-code-generator - 二维码生成浏览器插件
 
 ![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
