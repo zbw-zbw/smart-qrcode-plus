@@ -4,7 +4,8 @@
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-red.svg)
 
-一个基于 React 18 + TypeScript + Tailwind CSS 开发的 Chrome 浏览器扩展，提供**双向二维码处理能力** - 智能生成与解码，专为开发者和日常办公设计。
+【二维码生成】Chrome 浏览器插件，根据链接智能生成二维码，支持参数编辑、编辑内容自动缓存、图片解码等特色功能
+![立即安装](https://chromewebstore.google.com/detail/qr-code-generator-scanner/jklnokpkcmlbchlhegebjbhdhdamnmpg)
 
 ## ✨ 功能特性
 
