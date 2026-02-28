@@ -1,4 +1,4 @@
-# Smart QR Code Plus - 智能二维码处理浏览器扩展
+# qr-code-generator - 智能二维码处理浏览器扩展
 
 ![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -15,7 +15,7 @@
 - 🔄 **无缝模式切换** - 生成与解码模式自由切换，保持工作流连续性
 - 📋 **一键式操作** - 复制链接、下载二维码、结果处理等快捷功能
 
-### 🔍 解码功能亮点 (v1.0.1 新增)
+### 🔍 解码功能亮点
 - 📂 **本地文件解码** - 支持 PNG、JPG、JPEG、GIF、WebP、SVG 格式
 - 📋 **剪贴板解码** - Ctrl+V 直接粘贴截图或复制的图片
 - 🌐 **网络图片解码** - 输入图片 URL 进行远程解码
@@ -36,8 +36,8 @@
 #### 方法一：构建安装（推荐）
 ```bash
 # 克隆仓库
-git clone https://github.com/zbw-zbw/smart-qrcode-plus.git
-cd smart-qrcode-plus
+git clone https://github.com/zbw-zbw/qr-code-generator.git
+cd qr-code-generator
 
 # 安装依赖
 npm install
@@ -139,7 +139,7 @@ npm run type-check
 ### 项目结构
 
 ```
-smart-qrcode-plus/
+qr-code-generator/
 ├── src/
 │   ├── popup/
 │   │   ├── components/          # React 组件
@@ -209,7 +209,7 @@ smart-qrcode-plus/
 
 ## 🔮 版本规划
 
-### v1.0.1 ✅ 当前版本
+### v1.0.3 ✅ 当前版本
 - [x] ✅ 二维码解码功能（多种输入方式）
 - [x] ✅ 模式切换系统
 - [x] ✅ SVG格式支持
@@ -246,4 +246,4 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 ---
 
-**Smart QR Code Plus v1.0.1** - 让二维码处理更智能、更高效！ 🎉 
+**qr-code-generator v1.0.3** - 让二维码处理更智能、更高效！ 🎉 
